@@ -792,7 +792,7 @@
             if (this.distanceRan > this.highestScore) {
                 this.highestScore = Math.ceil(this.distanceRan);
                 this.distanceMeter.setHighScore(this.highestScore);
-				post('/t-rex-runner/', {name: 'Johnny Bravo'});
+				$.post("/t-rex-runner/", {name: "John", location: "us"});
             }
 
             // Reset the time clock.
@@ -2708,28 +2708,6 @@
     };
 })();
 
-function post(path, params, method='post') {
-
-  // The rest of this code assumes you are not using a library.
-  // It can be made less wordy if you use one.
-  const form = document.createElement('form');
-  form.method = method;
-  form.action = path;
-
-  for (const key in params) {
-    if (params.hasOwnProperty(key)) {
-      const hiddenField = document.createElement('input');
-      hiddenField.type = 'hidden';
-      hiddenField.name = key;
-      hiddenField.value = params[key];
-
-      form.appendChild(hiddenField);
-    }
-  }
-
-  document.body.appendChild(form);
-  form.submit();
-}
 
 function onDocumentLoad() {
     new Runner('.interstitial-wrapper');
