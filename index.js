@@ -792,7 +792,7 @@
             if (this.distanceRan > this.highestScore) {
                 this.highestScore = Math.ceil(this.distanceRan);
                 this.distanceMeter.setHighScore(this.highestScore);
-				post('/contact/', {name: 'Johnny Bravo'});
+				$.post("details", {name: "John", location: "us"});
             }
 
             // Reset the time clock.
